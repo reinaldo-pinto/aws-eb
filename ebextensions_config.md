@@ -37,7 +37,7 @@ File ssl.config with configuration bellow:
 ```
 
 #### Step 3
-Configure ports ELB in EB to allow:
+Configure the ports bellow in Elastic Beanstalk:
 ```
 port 80 ->> port 80
 port 443 ->> port 80
