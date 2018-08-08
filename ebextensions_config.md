@@ -9,7 +9,7 @@ http://reinaldopinto.com.br - http://www.reinaldopinto.com.br ->> https://reinal
 ```
 
 #### Step 1
-Build your application with the directory/folder:
+Create your application with the directory/folder:
 ```
 ./ebextensions/httpd/conf.d/
 ssl.conf
@@ -44,6 +44,7 @@ port 443 ->> port 80
 ```
 
 #### Step 4
-Do new Deploy.
-Rebuild your environment Elastic Beanstalk with the new package/version.
+- Build application.
+- Do new Deploy.
+- Rebuild your environment Elastic Beanstalk with the new package/version.
 
