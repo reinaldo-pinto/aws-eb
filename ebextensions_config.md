@@ -8,7 +8,8 @@ Eg:
 http://reinaldopinto.com.br - http://www.reinaldopinto.com.br ->> https://reinaldopinto.com.br
 ```
 
-ebextensions config:
+#### Step 1
+ebextensions with config in ssl.conf:
 
 ```
 <VirtualHost *:80>
@@ -28,9 +29,22 @@ ebextensions config:
   ErroLog /var/log/httpd/elasticbeanstalk-erro_log
 </VirtualHost>
 ```
+#### Step 2
 
+Build your application with the directory/folder:
+```
+./ebextensions/httpd/conf.d/
+ssl.conf
+```
+
+#### Step 3
 Configure ports ELB in EB to allow:
 ```
 port 80 ->> port 80
 port 443 ->> port 80
 ```
+#### Step 4
+
+Do new Deploy.
+Rebuild your environment Elastic Beanstalk with the new package/version.
+
