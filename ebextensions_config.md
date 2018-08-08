@@ -47,5 +47,5 @@ port 443 ->> port 80
 - Build application.
 - Do the upload of package.
 - Change the type of deployment in "Rolling updates and deployments" to Immutable.
-- Do new deploy in your environment (Elastic Beanstalk) the new package/version.
+- To do a new deploy in your environment (Elastic Beanstalk) with the new package/version.
 
