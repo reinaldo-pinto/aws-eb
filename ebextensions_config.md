@@ -11,11 +11,22 @@ http://reinaldopinto.com.br - http://www.reinaldopinto.com.br ->> https://reinal
 ebextensions config:
 
 ```
-RewriteEngine On
-RewriteCond %{HTTP:X-Forwarded-Proto} ^http$ [OR]
-RewriteCond %{HTTP_HOST} ^www\. [NC]
-RewriteCond %{SERVER_NAME} ^(www\.)?(.*)$ [NC]
-RewriteRule ^/?(.*)$ https://%2/$1 [L,R=301]
+<VirtualHost *:80>
+  RewriteEngine On
+  RewriteCond %{HTTP:X-Forwarded-Proto} ^http$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteCond %{SERVER_NAME} ^(www\.)?(.*)$ [NC]
+  RewriteRule ^/?(.*)$ https://%2/$1 [L,R=301]
+  <Proxy *>
+    Order Allow, Deny
+    Allow from all
+  </Proxy>
+  ProxyPass / http://localhost:8080/ retry=0
+  ProxyPassReverse / http://localhost:8080/
+  ProxyPreserveHost on
+  
+  ErroLog /var/log/httpd/elasticbeanstalk-erro_log
+</VirtualHost>
 ```
 
 Configure ports ELB in EB to allow:
