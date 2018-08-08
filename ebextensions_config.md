@@ -46,5 +46,6 @@ port 443 ->> port 80
 #### Step 4
 - Build application.
 - Do new Deploy.
-- Rebuild your environment Elastic Beanstalk with the new package/version.
+- Change the type of deployment in "Rolling updates and deployments" to Immutable.
+- Do deploy in your environment (Elastic Beanstalk) the new package/version.
 
