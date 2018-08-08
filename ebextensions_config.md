@@ -9,8 +9,14 @@ http://reinaldopinto.com.br - http://www.reinaldopinto.com.br ->> https://reinal
 ```
 
 #### Step 1
-ebextensions with config in ssl.conf:
+Build your application with the directory/folder:
+```
+./ebextensions/httpd/conf.d/
+ssl.conf
+```
 
+#### Step 2
+File ssl.config with configuration bellow:
 ```
 <VirtualHost *:80>
   RewriteEngine On
@@ -29,13 +35,6 @@ ebextensions with config in ssl.conf:
   ErroLog /var/log/httpd/elasticbeanstalk-erro_log
 </VirtualHost>
 ```
-#### Step 2
-
-Build your application with the directory/folder:
-```
-./ebextensions/httpd/conf.d/
-ssl.conf
-```
 
 #### Step 3
 Configure ports ELB in EB to allow:
@@ -43,8 +42,8 @@ Configure ports ELB in EB to allow:
 port 80 ->> port 80
 port 443 ->> port 80
 ```
-#### Step 4
 
+#### Step 4
 Do new Deploy.
 Rebuild your environment Elastic Beanstalk with the new package/version.
 
