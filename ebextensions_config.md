@@ -17,3 +17,9 @@ RewriteCond %{HTTP_HOST} ^www\. [NC]
 RewriteCond %{SERVER_NAME} ^(www\.)?(.*)$ [NC]
 RewriteRule ^/?(.*)$ https://%2/$1 [L,R=301]
 ```
+
+Configure ports ELB in EB to allow:
+```
+port 80 ->> port 80
+port 443 ->> port 80
+```
