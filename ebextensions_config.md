@@ -1,5 +1,5 @@
 
-Configuration to redirect http to https and remove www of uri.
+Configuration to redirect http to https and remove www of URL.
 
 Test success in AWS using Elastic Beanstalk with Tomcat.
 
